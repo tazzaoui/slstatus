@@ -6,8 +6,7 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
-#define MAXLEN 2048
-
+#define MAXLEN 2048 
 /*
  * function            description                     argument (example)
  *
@@ -59,18 +58,19 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */ 
+	/* function format          argument */
     {wifi_essid,            "%s ",               "wlp4s0"},
-    {netspeed_rx,           "↓%s ",               "wlp4s0"},  
-    {netspeed_tx,           "↑%s ",               "wlp4s0"}, 
-    {ipv4,                  "%s ",               "wlp4s0"}, 
+    {netspeed_rx,           "↓%s ",              "wlp4s0"},
+    {netspeed_tx,           "↑%s ",              "wlp4s0"},
+    {ipv4,                  "%s ",               "wlp4s0"},
     {wifi_perc,             "%s%%|",             "wlp4s0"},
-    {cpu_perc,              "CPU %s%%|",          NULL},    
-    {ram_free,              "MEM %s|",            NULL},
-    {disk_free,             "/: %s|",              "/"}, 
-    {vol_perc,              "VOL %s|",            "default"}, 
-    {battery_perc,          "BAT %s%% ",          "BAT0"},
-    {battery_state,         "%s ",                "BAT0"}, 
-    {battery_remaining,     "%s|",                "BAT0"},
-	{datetime,              "%s",                 "%F %T"},
+    {temp,                  "CPU %s°C",          "/sys/class/thermal/thermal_zone2/temp"},
+    {cpu_perc,              " %s%%|",            NULL},
+    {ram_free,              "RAM %s|",           NULL},
+    {disk_free,             "/: %s|",            "/"},
+    {vol_perc,              "VOL %s%% |",        "default"},
+    {battery_perc,          "BAT %s%% ",         "BAT0"},
+    {battery_state,         "%s ",               "BAT0"},
+    {battery_remaining,     "%s|",               "BAT0"},
+	{datetime,              "%s",                "%F %T"},
 };
